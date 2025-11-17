@@ -1,4 +1,4 @@
-name: Azure terraform cicd
+ame: Azure terraform cicd
 
 on: workflow_dispatch
 
@@ -28,16 +28,5 @@ jobs:
        run: terraform init -input=false
        working-directory: environment/dev
 
-
-
-
-
-
-
-
-
-   
- terraform-apply:     
-   
 
  
