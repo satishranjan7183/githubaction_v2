@@ -1,4 +1,4 @@
-ame: Azure terraform cicd
+name: Azure terraform cicd
 
 on: workflow_dispatch
 
