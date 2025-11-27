@@ -5,6 +5,7 @@ on: workflow_dispatch
 permissions: 
  id-token: write
  contents: read
+ 
 env:
   TF_WORKING_DIR: "environment/dev"
   TF_VERSION: "1.13.0"
