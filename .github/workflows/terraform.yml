@@ -5,7 +5,10 @@ on: workflow_dispatch
 permissions: 
  id-token: write
  contents: read
-
+env:
+  TF_WORKING_DIR: "environment/dev"
+  TF_VERSION: "1.13.0"
+  
 jobs:
  terraform-init-plan:
    runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
      - name: Terraform installer
        uses: autero1/action-terraform@v3.0.1   
        with: 
-         terraform-version: 1.13.0 
+         terraform-version: ${{ env.TF_VERSION }}
 
      - name: Azure Login
        uses: Azure/login@v2.3.0
@@ -28,7 +31,7 @@ jobs:
      - name: Terraform init
        id: init
        run: terraform init -input=false
-       working-directory: environment/dev
+       working-directory: ${{ env.TF_WORKING_DIR }}
 
 
  
